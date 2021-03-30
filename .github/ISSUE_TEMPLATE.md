@@ -33,7 +33,7 @@ BUG REPORTS NOT HAVING A REPRODUCTION WILL FROM NOW ON IMMEDIATELY BEING CLOSED!
 
 <pre><code>
 ngx-mqtt version: X.Y.Z
-<!-- Check whether this is still an issue in the most recent ngx-mqtt version -->
+<!-- Check whether this is still an issue in the most recent ngx-mqtt-ng11 version -->
 
 - Broker <!-- Hummingbird, HiveMQ, Mosquitto, etc. -->
 

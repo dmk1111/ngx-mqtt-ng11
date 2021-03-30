@@ -83,14 +83,14 @@ describe('MqttService', () => {
   });
 
   it('#publish', (done) => {
-    mqttService.observe('ngx-mqtt/tests/publish/' + currentUuid).subscribe((_: IMqttMessage) => {
+    mqttService.observe('ngx-mqtt-ng11/tests/publish/' + currentUuid).subscribe((_: IMqttMessage) => {
       done();
     });
-    mqttService.publish('ngx-mqtt/tests/publish/' + currentUuid, 'publish').subscribe(noop);
+    mqttService.publish('ngx-mqtt-ng11/tests/publish/' + currentUuid, 'publish').subscribe(noop);
   });
 
   it('#pipeablePublish', (done) => {
-    mqttService.observe('ngx-mqtt/tests/pipeablePublish/' + currentUuid).pipe(
+    mqttService.observe('ngx-mqtt-ng11/tests/pipeablePublish/' + currentUuid).pipe(
       scan<IMqttMessage, number>(acc => acc + 1, 0)
     ).subscribe(count => {
       if (count === 3) {
@@ -98,17 +98,17 @@ describe('MqttService', () => {
       }
     });
     of(null).pipe(
-      mergeMap(i => mqttService.publish('ngx-mqtt/tests/pipeablePublish/' + currentUuid, 'publish1')),
-      mergeMap(i => mqttService.publish('ngx-mqtt/tests/pipeablePublish/' + currentUuid, 'publish2')),
-      mergeMap(i => mqttService.publish('ngx-mqtt/tests/pipeablePublish/' + currentUuid, 'publish3'))
+      mergeMap(i => mqttService.publish('ngx-mqtt-ng11/tests/pipeablePublish/' + currentUuid, 'publish1')),
+      mergeMap(i => mqttService.publish('ngx-mqtt-ng11/tests/pipeablePublish/' + currentUuid, 'publish2')),
+      mergeMap(i => mqttService.publish('ngx-mqtt-ng11/tests/pipeablePublish/' + currentUuid, 'publish3'))
     ).subscribe();
   });
 
   it('#unsafePublish', (done) => {
-    mqttService.observe('ngx-mqtt/tests/unsafePublish/' + currentUuid).subscribe((_: IMqttMessage) => {
+    mqttService.observe('ngx-mqtt-ng11/tests/unsafePublish/' + currentUuid).subscribe((_: IMqttMessage) => {
       done();
     });
-    mqttService.unsafePublish('ngx-mqtt/tests/unsafePublish/' + currentUuid, 'unsafePublish');
+    mqttService.unsafePublish('ngx-mqtt-ng11/tests/unsafePublish/' + currentUuid, 'unsafePublish');
   });
 
 
@@ -164,7 +164,7 @@ describe('MqttService', () => {
 describe('MqttService Retained Behavior', () => {
   it('emit the retained message for all current and new subscribers', (done) => {
     let counter = 0;
-    const topic = 'ngx-mqtt/tests/retained/' + currentUuid;
+    const topic = 'ngx-mqtt-ng11/tests/retained/' + currentUuid;
     const mqttSubscriptions: IMqttSubscription[] = [];
 
     function observe(): void {
@@ -201,7 +201,7 @@ describe('MqttService Retained Behavior', () => {
   });
 
   it('do not emit not retained message on late subscribe', (done) => {
-    const topic = 'ngx-mqtt/tests/notRetained/' + currentUuid;
+    const topic = 'ngx-mqtt-ng11/tests/notRetained/' + currentUuid;
     let lateMessage: IMqttMessage; // this message should never occur
     mqttService.observe(topic).subscribe((msg1: IMqttMessage) => {
       expect(msg1).toBeDefined();

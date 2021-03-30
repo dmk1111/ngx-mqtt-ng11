@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-mqtt": {
+    "ngx-mqtt-ng11": {
       "projectType": "library",
-      "root": "projects/ngx-mqtt",
-      "sourceRoot": "projects/ngx-mqtt/src",
+      "root": "projects/ngx-mqtt-ng11",
+      "sourceRoot": "projects/ngx-mqtt-ng11/src",
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/ngx-mqtt/tsconfig.lib.json",
-            "project": "projects/ngx-mqtt/ng-package.json"
+            "tsConfig": "projects/ngx-mqtt-ng11/tsconfig.lib.json",
+            "project": "projects/ngx-mqtt-ng11/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-mqtt/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-mqtt-ng11/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-mqtt/src/test.ts",
-            "tsConfig": "projects/ngx-mqtt/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-mqtt/karma.conf.js"
+            "main": "projects/ngx-mqtt-ng11/src/test.ts",
+            "tsConfig": "projects/ngx-mqtt-ng11/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-mqtt-ng11/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-mqtt/tsconfig.lib.json",
-              "projects/ngx-mqtt/tsconfig.spec.json"
+              "projects/ngx-mqtt-ng11/tsconfig.lib.json",
+              "projects/ngx-mqtt-ng11/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -46,5 +46,5 @@
   "cli": {
     "analytics": false
   },
-  "defaultProject": "ngx-mqtt"
+  "defaultProject": "ngx-mqtt-ng11"
 }

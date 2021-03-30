@@ -1,5 +1,5 @@
 {
-    "name": "ngx-mqtt",
+    "name": "ngx-mqtt-ng11",
     "scripts": {
         "postinstall": "node postinstall"
     },

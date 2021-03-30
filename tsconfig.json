@@ -23,8 +23,8 @@
     "skipTemplateCodegen": true
   },
   "paths": {
-    "ngx-mqtt": [
-      "dist/ngx-mqtt"
+    "ngx-mqtt-ng11": [
+      "dist/ngx-mqtt-ng11"
     ]
   }
 }

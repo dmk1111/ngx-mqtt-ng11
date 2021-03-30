@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ngx-mqtt",
+  "dest": "../../dist/ngx-mqtt-ng11",
   "whitelistedNonPeerDependencies": ["mqtt"],
   "keepLifecycleScripts": true,
   "assets": [

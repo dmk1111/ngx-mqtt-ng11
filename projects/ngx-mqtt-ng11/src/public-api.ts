@@ -1,5 +1,5 @@
 /*
- * Public API Surface of ngx-mqtt
+ * Public API Surface of ngx-mqtt-ng11
  */
 
 export * from './lib/mqtt.model';
